@@ -25,9 +25,116 @@
       text-align: center;
       margin-top: 50px;
     }
+    .hamburger-menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+    .options-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+    
+    .options-container.open {
+      width: 250px;
+    }
+    
+    .options {
+      width: 100%;
+      padding: 20px;
+      color: #fff;
+      text-align: left;
+    }
+    
+    .options a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .file-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .file-list li {
+      margin-bottom: 10px;
+    }
+    
+    .file-link {
+      color: #337ab7;
+      text-decoration: none;
+    }
+    
+    footer {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    
+    /* Estilos para as imagens de exemplo */
+    .image-list {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .image-list li {
+      text-align: center;
+    }
+    
+    .image {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+    }
+    
+    .image-name {
+      margin-top: 10px;
+    }
+    h2{
+     position: center;
+      }
   </style>
 </head>
 <body>
+     <div class="hamburger-menu" onclick="toggleOptions()">&#9776;</div>
+  </header>
+
+  <div class="options-container" id="options-container">
+    <div class="options">
+      <br>
+      <br>
+      <a href="#">Início</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaGjbY_W1NcR-uBQYff92BPOf4OF4PuhCkyT4PT3_qsxP4qQ/viewform?usp=sf_link">Enviar APP</a>
+      <a href="https://harebound.github.io/GameSphere/priv.html">Política de privacidade</a>
+      <a href="https://harebound.github.io/FILEVORTEX/Termos.html">Termos de uso</a>
+    </div>
+  </div>
   <h1>Política de Privacidade</h1>
   <p>A sua privacidade é importante para nós. Nesta política de privacidade, explicamos quais informações são coletadas durante o uso deste site e como essas informações são utilizadas.</p>
 
@@ -47,5 +154,44 @@
   <footer>
     <p>© 2023 GameSphere. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+  function searchGames() {
+    var searchTerm = document.getElementById("search-input").value.toLowerCase();
+    var gameItems = document.getElementsByClassName("game-item");
+    var noResultsMsg = document.getElementById("no-results-msg");
+
+    var foundResults = false;
+
+    for (var i = 0; i < gameItems.length; i++) {
+      var gameName = gameItems[i].querySelector(".image-name").innerText.toLowerCase();
+      var gameImage = gameItems[i].querySelector(".image");
+
+      if (gameName.includes(searchTerm)) {
+        gameItems[i].style.display = "block";
+        gameImage.style.opacity = "1";
+        foundResults = true;
+      } else {
+        gameItems[i].style.display = "none";
+        gameImage.style.opacity = "0.5";
+      }
+    }
+
+    if (foundResults) {
+      noResultsMsg.style.display = "none";
+    } else {
+      noResultsMsg.style.display = "block";
+    }
+  }
+
+  document.getElementById("search-input").addEventListener("input", searchGames);
+</script>
+
+  <script>
+    function toggleOptions() {
+      var optionsContainer = document.getElementById("options-container");
+      optionsContainer.classList.toggle("open");
+    }
+  </script>
 </body>
 </html>

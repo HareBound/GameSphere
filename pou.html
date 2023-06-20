@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameSphere</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      width: 320px; /* Largura desejada */
+      height: 108px; /* Altura desejada */
+      background-color: black;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+    
+    .hamburger-menu {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      color: #fff;
+      cursor: pointer;
+      z-index: 1;
+    }
+    
+    .options-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+      transition: width 0.3s ease;
+    }
+    
+    .options-container.open {
+      width: 250px;
+    }
+    
+    .options {
+      width: 100%;
+      padding: 20px;
+      color: #fff;
+      text-align: left;
+    }
+    
+    .options a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+    
+    main {
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+    }
+    
+    .file-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .file-list li {
+      margin-bottom: 10px;
+    }
+    
+    .file-link {
+      color: #337ab7;
+      text-decoration: none;
+    }
+    
+    footer {
+      background-color: white;
+      color: black;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+    
+    /* Estilos para as imagens de exemplo */
+    .image-list {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      justify-items: center;
+    }
+    
+    .image-list li {
+      text-align: center;
+    }
+    
+    .image {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+    }
+    
+    .image-name {
+      margin-top: 10px;
+    }
+    h2{
+     position: center;
+    }
+    
+    #search-input::placeholder {
+  text-align: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+    
+h4{color: white;}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="banner.png" style="position: center;">
+    <div class="hamburger-menu" onclick="toggleOptions()">&#9776;</div>
+  </header>
+
+  <div class="options-container" id="options-container">
+    <div class="options">
+      <br>
+      <br>
+      <a href="https://harebound.github.io/GameSphere/">Início</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeaGjbY_W1NcR-uBQYff92BPOf4OF4PuhCkyT4PT3_qsxP4qQ/viewform?usp=sf_link">Enviar APP</a>
+      <a href="https://harebound.github.io/GameSphere/priv.html">Política de privacidade</a>
+      <a href="https://harebound.github.io/GameSphere/termos.html">Termos de uso</a>
+    </div>
+  </div>
+  <div style="text-align: center;">
+    <img src="pou.png" class="leap" id="leap">
+    <br>
+    <br>
+    <h2>Pou</h2>
+    <p>Versão: 1.4.84</p>
+    <p>Desenvolvedor: Zakeh</p>
+    <p>Tamanho do APK: 40 MB</p>
+    <p>Requisitos do sistema operacional: Android 4.0.3 ou superior</p>
+    <p>Classificação etária: Livre</p>
+    <p>Idiomas suportados: Vários idiomas</p>
+    <p>Data de lançamento: 10 de outubro de 2012</p>
+    <p>Descrição do aplicativo: Pou é um jogo de estimação virtual onde você cuida de um alienígena de estimação chamado Pou. Alimente, brinque e cuide do seu Pou para vê-lo crescer e se divertir em várias atividades.</p>
+    <p>Modo offline: Sim</p>
+    <a href="https://dw23.uptodown.com/dwn/yg51bHlCxXjr47vsVJ48aBnOl2svgvLURYSs5RZYDtfs5wm6YN0Hiy9GLoxh7Y-YnHaAIz4j5Y8keHxJmby5olfvzAMp7na8IocNkjnXmjMf6BR-aYiTZE28cYYRe21k/M_7u6YA4U4H7LTukzHWxP_RrB2l3VJjjsysdFl9zMuI-66q84y1zK85WCVdOCwTS_YpUJV2J5QkxSQh7B8_8SvtSZZ5h34y-vYBxXdjILLe7GP472H3E9lpMjqpcYZ9H/Wz2Gz1Y8K5ubUMtKcWCgs5T5vW13asoNNSs954sg8G9dd4vORgbmuMQ9r043EZqj/pou-1-4-112.apk" class="download-button">BAIXAR</a>
+    <br>
+    <br>
+    <p style="font-size: 9px;">Dúvidas ou problemas? Entre em contato com o suporte pelo email <a href="mailto:hareboundstudios@gmail.com">hareboundstudios@gmail.com</a>.</p>
+  </div>
+  <footer>
+    &copy; 2023 GameSphere. Todos os direitos reservados.
+  </footer>
+  <script>
+    function toggleOptions() {
+      var optionsContainer = document.getElementById("options-container");
+      optionsContainer.classList.toggle("open");
+    }
+  </script>
+</body>
+</html>
